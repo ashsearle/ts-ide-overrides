@@ -1,0 +1,14 @@
+{
+  "name": "ts-ide-overrides",
+  "version": "0.1.0",
+  "main": "./dist",
+  "repository": "https://github.com/ashsearle/ts-ide-overrides.git",
+  "author": "Ash Searle <ash@hexmen.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

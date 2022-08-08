@@ -1,0 +1,7 @@
+{
+  "name": "ts-ide-overrides-example-project",
+  "devDependencies": {
+    "ts-ide-overrides": "file:..",
+    "typescript": "^4.7.4"
+  }
+}
