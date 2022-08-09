@@ -1,6 +1,6 @@
 {
   "name": "ts-ide-overrides",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./dist",
   "repository": "https://github.com/ashsearle/ts-ide-overrides.git",
   "author": "Ash Searle <ash@hexmen.com>",
@@ -10,6 +10,9 @@
   ],
   "scripts": {
     "build": "tsc"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
   },
   "devDependencies": {
     "typescript": "^4.7.4"

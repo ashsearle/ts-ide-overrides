@@ -1,31 +1,29 @@
 # ts-ide-overrides
 
-This plugin allows you to override a subset of TypeScript `compilerOptions` when editing files in an IDE. (Specifically `strict` and its 8 associated options: `alwaysStrict`, `strictNullChecks`, `strictBindCallApply`, `strictFunctionTypes`, `strictPropertyInitialization`, `noImplicitAny`, `noImplicitThis`, `useUnknownInCatchVariables`.)
+TypeScript language service plugin to override _strict mode family_ options within an editor.
 
-The purpose of the plugin is to support gradual adoption of strict rules, without breaking pre-existing build and validation processes.
+The plugin helps raise visibility of strict mode issues without breaking your build process.
+
+The _strict mode family_ options are `strict` and the 8 related options: `alwaysStrict`, `strictNullChecks`, `strictBindCallApply`, `strictFunctionTypes`, `strictPropertyInitialization`, `noImplicitAny`, `noImplicitThis`, and `useUnknownInCatchVariables`.
 
 ## Install
 
 Install as a dev-dependency using a package manager:
 
-Using npm:
 ```bash
-npm install -D ts-ide-overrides
+npm install --save-dev ts-ide-overrides
 ```
 
-Using yarn:
 ```bash
-yarn add -D ts-ide-overrides
+yarn add --save-dev ts-ide-overrides
 ```
 
-Using pnpm:
 ```bash
-pnpm add -D ts-ide-overrides
+pnpm add --save-dev ts-ide-overrides
 ```
 
-Using bun:
 ```bash
-bun add -d ts-ide-overrides
+bun add --development ts-ide-overrides
 ```
 
 ## Configuration
@@ -41,8 +39,9 @@ Add plugin to `tsconfig.json`:
         "name": "ts-ide-overrides",
         "overrides": {
           // just an example...
-          "strictNullChecks": true,
-          "noImplicitAny": true
+          "strict": true,
+          "noImplicitAny": false,
+          "useUnknownInCatchVariables": false
         }
       }
     ]
@@ -55,6 +54,5 @@ Add plugin to `tsconfig.json`:
 The plugin supports code comments to toggle any of the 9 options for the current file:
 
 ```ts
-// @ts-ide-disable-strict-null-checks
-/* @ts-ide-enable-no-implicit-this */
+// @ts-ide-disable-strict @ts-ide-enable-strict-null-checks
 ```
