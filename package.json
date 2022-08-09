@@ -1,6 +1,15 @@
 {
   "name": "ts-ide-overrides",
-  "version": "0.1.2",
+  "version": "0.1.3",
+  "description": "TypeScript language service plugin to toggle strict checks in editors",
+  "keywords": [
+    "typescript",
+    "language service",
+    "ide",
+    "editor",
+    "strict mode",
+    "overrides"
+  ],
   "main": "./dist",
   "repository": "https://github.com/ashsearle/ts-ide-overrides.git",
   "author": "Ash Searle <ash@hexmen.com>",
