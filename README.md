@@ -1,10 +1,12 @@
 # ts-ide-overrides
 
-TypeScript language service plugin to override _strict mode family_ options within an editor.
+TypeScript language service plugin to override _strict mode family_ and boolean type checking options within an editor.
 
 The plugin helps raise visibility of strict mode issues without breaking your build process.
 
 The _strict mode family_ options are `strict` and the 8 related options: `alwaysStrict`, `strictNullChecks`, `strictBindCallApply`, `strictFunctionTypes`, `strictPropertyInitialization`, `noImplicitAny`, `noImplicitThis`, and `useUnknownInCatchVariables`.
+
+The the other boolean type-checking options supported are `allowUnreachableCode`, `allowUnusedLabels`, `exactOptionalPropertyTypes`, `noFallthroughCasesInSwitch`, `noImplicitOverride`, `noImplicitReturns`, `noPropertyAccessFromIndexSignature`, `noUncheckedIndexedAccess`, `noUnusedLocals` and `noUnusedParameters`.
 
 ## Install
 

@@ -1,4 +1,5 @@
-const strictOptions = [
+const typeCheckingOptions = [
+  // strict family options
   "strict",
   "alwaysStrict",
   "strictNullChecks",
@@ -8,6 +9,17 @@ const strictOptions = [
   "noImplicitAny",
   "noImplicitThis",
   "useUnknownInCatchVariables",
+  // others
+  'allowUnreachableCode',
+  'allowUnusedLabels',
+  'exactOptionalPropertyTypes',
+  'noFallthroughCasesInSwitch',
+  'noImplicitOverride',
+  'noImplicitReturns',
+  'noPropertyAccessFromIndexSignature',
+  'noUncheckedIndexedAccess',
+  'noUnusedLocals',
+  'noUnusedParameters',
 ];
 
 function init(modules: {
@@ -49,7 +61,7 @@ function init(modules: {
         .getTodoComments(filePath, [{ text: "@ts-ide", priority: 0 }])
         .reduce((acc, comment) => {
           const directives = comment.message.match(
-            /@ts-ide-(enable|disable)-\S+/g
+            /@ts-ide-(enable|disable)-[-\w]+/g
           );
           directives &&
             directives.forEach((directive) => {
@@ -59,7 +71,7 @@ function init(modules: {
                 .slice("@ts-ide-enable-".length + (enable ? 0 : 1))
                 .toLowerCase()
                 .replace(/-./g, (str) => str.slice(1).toUpperCase());
-              if (strictOptions.includes(property)) {
+              if (typeCheckingOptions.includes(property)) {
                 acc[property] = enable;
               }
             });

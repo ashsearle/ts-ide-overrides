@@ -1,6 +1,6 @@
 {
   "name": "ts-ide-overrides",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "TypeScript language service plugin to toggle strict checks in editors",
   "keywords": [
     "typescript",
